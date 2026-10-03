@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K Manasa | Java Full Stack Developer</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 16, 32, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222b45;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #7c5cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8f7cff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 20% 30%, #302060 0%, transparent 35%),
+                radial-gradient(circle at 80% 70%, #143c58 0%, transparent 35%),
+                #0b1020;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero small {
+            color: #8f7cff;
+            font-size: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #8f7cff;
+        }
+
+        .hero h2 {
+            color: #c8c8d5;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #aaaec0;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #7c5cff;
+        }
+
+        .primary:hover {
+            background: #6244dd;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #7c5cff;
+            color: #a99cff;
+        }
+
+        .secondary:hover {
+            background: #7c5cff;
+            color: white;
+        }
+
+
+        /* HERO CARD */
+
+        .hero-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #343b58;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .profile-circle {
+            width: 190px;
+            height: 190px;
+            margin: auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c5cff, #20c8ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        .hero-card h3 {
+            margin-top: 20px;
+            font-size: 25px;
+        }
+
+        .hero-card p {
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================== */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+        }
+
+        .section-title span {
+            color: #7c5cff;
+        }
+
+        .section-title p {
+            color: #9da2b5;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #b7bac8;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: #131a2d;
+            border: 1px solid #29314b;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #7c5cff;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            color: #ddd;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #131a2d;
+            border: 1px solid #29314b;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #7c5cff;
+            box-shadow: 0 15px 40px rgba(124,92,255,0.15);
+        }
+
+        .project-number {
+            color: #7c5cff;
+            font-size: 14px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            color: #aeb2c1;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .tech span {
+            background: #222a44;
+            color: #b9adff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .github {
+            color: #9b8cff;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           INTERNSHIP
+        ========================== */
+
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+            border-left: 3px solid #7c5cff;
+            padding-left: 30px;
+        }
+
+        .timeline-card {
+            background: #131a2d;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-card h3 {
+            color: #9b8cff;
+        }
+
+        .timeline-card p {
+            color: #afb3c2;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background: #131a2d;
+            border: 1px solid #29314b;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            font-size: 25px;
+            color: #9b8cff;
+        }
+
+        .education-card p {
+            color: #aaaec0;
+        }
+
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================== */
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .achievement {
+            background: #131a2d;
+            border: 1px solid #29314b;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .achievement h3 {
+            color: #9b8cff;
+            margin-bottom: 10px;
+        }
+
+        .achievement p {
+            color: #adb1c0;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: #131a2d;
+            border: 1px solid #29314b;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-box p {
+            color: #afb3c2;
+            margin: 10px 0;
+        }
+
+        .contact-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 10px 18px;
+            border: 1px solid #7c5cff;
+            border-radius: 8px;
+            color: #b2a6ff;
+        }
+
+        .contact-links a:hover {
+            background: #7c5cff;
+            color: white;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222b45;
+            color: #777d91;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            KM.
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <div>
+
+            <small>Hello, I'm</small>
+
+            <h1>
+                K <span>Manasa</span>
+            </h1>
+
+            <h2>
+                Java Full Stack Developer
+            </h2>
+
+            <p>
+                B.Tech graduate passionate about Java programming,
+                web development and problem solving. I enjoy building
+                practical applications using Java, HTML, CSS and SQL.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="profile-circle">
+                KM
+            </div>
+
+            <h3>K Manasa</h3>
+
+            <p>
+                Java • HTML • CSS • SQL
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About <span>Me</span></h2>
+
+            <p>
+                A little about my background
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p>
+                I am a B.Tech graduate with a strong interest in
+                Java programming and software development. I mainly
+                focus on programming practice and problem solving.
+            </p>
+
+            <br>
+
+            <p>
+                I have experience working with Java, HTML, CSS and SQL,
+                along with technologies such as JDBC, Servlets, JSP,
+                MySQL and Apache Tomcat.
+            </p>
+
+            <br>
+
+            <p>
+                I am also interested in improving my communication,
+                teamwork and leadership skills while continuously
+                learning new technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My <span>Skills</span></h2>
+
+            <p>
+                Technologies and tools I work with
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                <div class="skill-icon">☕</div>
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🎨</div>
+                <h3>CSS</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🗄️</div>
+                <h3>SQL</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">⚡</div>
+                <h3>JavaScript</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🔗</div>
+                <h3>JDBC</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🚀</div>
+                <h3>Servlet / JSP</h3>
+            </div>
+
+            <div class="skill">
+                <div class="skill-icon">🐬</div>
+                <h3>MySQL</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My <span>Projects</span></h2>
+
+            <p>
+                Some of the projects I have worked on
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <span class="project-number">
+                    PROJECT 01
+                </span>
+
+                <h3>
+                    MULTIMEDIA BLOG
+                </h3>
+
+                <p>
+                   The Multimedia Project is a web-based project that demonstrates the integration of audio, video, and image files into a webpage. It provides users with an interactive multimedia experience where they can view images, listen to audio, and watch videos. The project helps demonstrate the practical use of multimedia elements in modern web development.
+                </p>
+
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    
+                </div>
+
+                <a
+                    href="https://github.com/manasa-krishnapatnam/Efficious-Novel-Intrusion-Detection-System-cloud"
+                    target="_blank"
+                    class="github">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <span class="project-number">
+                    PROJECT 02
+                </span>
+
+                <h3>
+                    TYPES OF LISTS
+                </h3>
+
+                <p>
+                   The Multi List Project demonstrates ordered, unordered, and description lists to organize webpage content clearly.
+It helps present information in a structured, readable, and user-friendly way.
+                </p>
+
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                   
+                </div>
+                 <a
+                    href="https://github.com/manasa-krishnapatnam/Efficious-Novel-Intrusion-Detection-System-cloud"
+                    target="_blank"
+                    class="github">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <span class="project-number">
+                    PROJECT 03
+                </span>
+
+                <h3>
+                    MULTI TABLES
+                </h3>
+
+                <p>
+                   The project demonstrates the basic HTML table tags such as <tr> for table rows, <th> for table headings, and <td> for table data.
+It helps organize and display information in a structured rows-and-columns format.</p>
+
+                <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                   
+                </div>
+                 <a
+                    href="https://github.com/manasa-krishnapatnam/Efficious-Novel-Intrusion-Detection-System-cloud"
+                    target="_blank"
+                    class="github">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <span class="project-number">
+                    PROJECT 04
+                </span>
+
+                <h3>
+                   FORMS
+                </h3>
+
+                <p>
+                   The Form Tag Project demonstrates how the <form> tag is used to collect user information through input fields.
+It helps create interactive forms for details such as name, email, phone number, course selection, and registration.</p>
+
+                 <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                   
+                </div>
+                 <a
+                    href="https://github.com/manasa-krishnapatnam/Efficious-Novel-Intrusion-Detection-System-cloud"
+                    target="_blank"
+                    class="github">
+                    View on GitHub →
+                </a>
+
+            </div>
+
+             <!-- PROJECT 5 -->
+
+            <div class="project-card">
+
+                <span class="project-number">
+                    PROJECT 05
+                </span>
+
+                <h3>
+                     Travel Planer Website
+                </h3>
+
+                <p>
+                  The Travel Planner Website is a web-based project designed to help users plan and organize their trips by managing travel destinations and related information.
+It provides a simple and user-friendly interface for exploring destinations and creating a convenient travel plan.  <div class="tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                   
+                </div>
+                 <a
+                    href="https://github.com/manasa-krishnapatnam/Efficious-Novel-Intrusion-Detection-System-cloud"
+                    target="_blank"
+                    class="github">
+                    View on GitHub →
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My <span>Experience</span></h2>
+
+            <p>
+                Internship experience
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-card">
+
+                <h3>
+                    Full Stack Java Developer Intern
+                </h3>
+
+                <strong>
+                    CodeThanthra
+                </strong>
+
+                <p>
+                    Worked on Java-based full stack projects
+                    during my internship, gaining practical
+                    experience in frontend, backend and database
+                    technologies.
+                </p>
+
+                <p>
+                    Projects included Library Management System,
+                    Travel Planner Website and Chatbot.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My <span>Education</span></h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>B.Tech</h3>
+
+            <p>
+                2022 – 2026
+            </p>
+
+            <br>
+
+            <p>
+                Relevant Coursework:
+            </p>
+
+            <p>
+                Java Programming • Python Programming •
+                Cloud Computing • Computer Networks •
+                Software Engineering • Operating Systems •
+                Data Structures and Algorithms
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ACHIEVEMENTS
+========================== -->
+
+<section id="achievements">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My <span>Achievements</span></h2>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+            <div class="achievement">
+
+                <h3>🥇 1st Place</h3>
+
+                <p>
+                    Poster Presentation on 5G Technology
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>🥉 3rd Prize</h3>
+
+                <p>
+                    Paper Presentation
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>🏆 Certifications</h3>
+
+                <p>
+                    NPTEL, BE10X Workshop and other
+                    technical certifications
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Let's <span>Connect</span></h2>
+
+            <p>
+                Feel free to connect with me
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>K Manasa</h3>
+
+            <p>
+                Java Full Stack Developer
+            </p>
+
+            <p>
+                Interested in software development,
+                Java programming and problem solving.
+            </p>
+
+
+            <div class="contact-links">
+
+                <a href="mailto:your-email@gmail.com">
+                    📧 Email
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank">
+                    💼 LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/manasa-krishnapatnam"
+                    target="_blank">
+                    🐙 GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+        © 2026 K Manasa. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
